@@ -1,0 +1,92 @@
+.row {
+    background-color: $color-background;
+    grid-column: 2 / 13;
+    color: #fff;
+ 
+    &__heading {
+       padding-top: 2rem;
+       margin: 0;
+       font-size: 32px;
+
+    }
+ 
+    &__container::-webkit-scrollbar {
+       display: none;
+    }
+ 
+    &__container { 
+       scrollbar-width: none;
+       transition: transform 450ms;
+       overflow: -moz-hidden-unscrollable;
+       overflow-x: scroll;
+       display: flex;
+       width: 95vw;
+       overflow: -moz-scrollbars-horizontal; 
+       grid-template-columns: repeat(20, 1fr);
+       column-gap: 0;
+       
+ 
+      &--item:hover > img{
+         border: 2px solid white;
+      }
+      &--item > img{
+         border: 2px solid transparent;
+      }
+ 
+ 
+       &:hover &--item {
+          opacity: .3;
+          
+          &:hover {
+            //  transform: scale(1.1);
+             opacity: 1;
+             
+          }
+       }
+ 
+
+      // BELOW CSS -
+      // Initially had a hover tranistion that scaled up the focused image, but it was being concealed by the 
+      // rail at 1920x1080, so decided to take out 
+      //  &:hover > *  {
+      //    //  transform: translate3d(-3rem, 0, 0); 
+          
+          
+      //  }
+ 
+      //  &--item:hover ~ &--item {
+      //    //   transform: translate3d(3rem, 0, 0); 
+           
+          
+      //  }
+ 
+ 
+       
+ 
+       &--item { 
+          cursor: pointer;
+          transition: all 450ms; 
+          transform: center left; 
+          padding-top: 2.5rem;
+          padding-bottom: 2.5rem;
+          height: 29rem;
+          min-height: 0;
+          
+ 
+         
+          &:not(:last-child) {
+             padding-right: 1rem;
+          }
+        
+          &-image {
+             height: 100%;
+             
+          }
+ 
+         
+ 
+       }
+    }
+ }
+ 
+ 
